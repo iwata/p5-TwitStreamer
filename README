@@ -1,0 +1,17 @@
+NAME
+    TwitStreamer -
+
+SYNOPSIS
+      use TwitStreamer;
+
+DESCRIPTION
+    TwitStreamer is
+
+AUTHOR
+    Motonori Iwata <gootonori@gmail.com>
+
+SEE ALSO
+LICENSE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
