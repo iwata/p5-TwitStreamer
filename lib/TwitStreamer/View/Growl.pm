@@ -10,8 +10,6 @@ use base 'TwitStreamer::View';
 sub tweet {
     my ($class, $tweet) = @_;
 
-    return unless (defined $tweet->{text});
-
     my $event = 'tweet';
     my $growl = Growl::Any->new(
         appname => $class->application,

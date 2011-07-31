@@ -2,6 +2,8 @@
 
 use strict;
 use warnings;
+use utf8;
+use open OUT => qw/:utf8 :std/;
 
 use FindBin;
 use lib "$FindBin::Bin/../lib";

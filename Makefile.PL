@@ -10,6 +10,7 @@ requires 'String::CamelCase';
 requires 'Class::Load';
 requires 'Config::Pit';
 requires 'Object::Container';
+requires 'Web::Scraper';
 requires 'AnyEvent';
 requires 'AnyEvent::Twitter';
 requires 'AnyEvent::Twitter::Stream';

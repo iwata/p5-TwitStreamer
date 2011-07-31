@@ -1,15 +1,32 @@
-package TwitStreamer::Filter::None;
+package TwitStreamer::Filter::Instagram;
 
 use strict;
 use warnings;
 use utf8;
 
+use Carp;
+use Web::Scraper;
+use URI;
+
 use base 'TwitStreamer::Filter';
+
+my $scraper = scraper {
+    process 'img.photo', image => '@src';
+};
 
 sub before {
     my ($class, $tweet) = @_;
-    $tweet->{image} = $tweet->{user}{profile_image_url};
-    $tweet;
+
+    return unless $tweet->{text} =~ /(http:\/\/instagr\.am\/.+)/;
+
+    my $res = eval {
+        $scraper->scrape(URI->new($1))
+    };
+    if ( my $e = $@ ) {
+        croak $e;
+    }
+
+    $tweet->{image} = $res->{image};
 }
 
 1;
@@ -18,7 +35,7 @@ __END__
 
 =head1 NAME
 
-TwitStreamer::Filter::None
+TwitStreamer::Filter::Instagram
 
 =head1 SYNOPSIS
 

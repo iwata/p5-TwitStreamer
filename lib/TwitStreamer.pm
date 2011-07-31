@@ -21,9 +21,7 @@ sub new {
     map {
         my $class = 'TwitStreamer::'.ucfirst($_).'::'.camelize(delete $args->{$_});
         Class::Load::load_class $class;
-        container->register($_ => sub {
-            $class->new
-        });
+        container->register($_ => sub { $class->new });
     } qw/view filter/;
 
     return $class->SUPER::new({
@@ -47,7 +45,8 @@ sub run {
         method   => 'userstream',
         on_tweet => sub {
             my $tweet = shift;
-            container('filter')->before($tweet);
+            return unless defined($tweet->{text});
+            return unless container('filter')->before($tweet);
             container('view')->tweet($tweet);
             container('filter')->after($tweet);
         },
