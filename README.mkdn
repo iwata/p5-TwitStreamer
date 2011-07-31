@@ -25,7 +25,15 @@ start twitter stream
 
 - __--help|-h__
 
-Print brief help message and exit
+show help message
+
+- __--view|-v__
+
+view class(default growl)
+
+- __--filter|-f__
+
+filter class(default none)
 
 # AUTHOR
 

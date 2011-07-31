@@ -1,24 +1,23 @@
 ---
 abstract: unknown
 author:
-  - 'Motonori Iwata <gootonori@gmail.com>'
+  - 'Motonori Iwata'
 build_requires:
   ExtUtils::MakeMaker: 6.42
   Test::Exception: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
+  ExtUtils::MakeMaker: 0
 dynamic_config: 0
-generated_by: 'Module::Install version 1.01, CPAN::Meta::Converter version 2.110930'
-license: perl
+generated_by: 'ExtUtils::MakeMaker version 6.58, CPAN::Meta::Converter version 2.110930'
+license: unknown
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: TwitStreamer
 no_index:
   directory:
-    - inc
     - t
-    - xt
+    - inc
 requires:
   AnyEvent: 0
   AnyEvent::Twitter: 0
@@ -30,8 +29,4 @@ requires:
   Object::Container: 0
   String::CamelCase: 0
   Web::Scraper: 0
-resources:
-  homepage: https://github.com/iwata/p5-TwitStreamer/tree
-  license: http://dev.perl.org/licenses/
-  repository: git://github.com/iwata/p5-TwitStreamer.git
 version: 0.01

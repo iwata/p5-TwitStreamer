@@ -1,12 +1,12 @@
 {
    "abstract" : "unknown",
    "author" : [
-      "Motonori Iwata <gootonori@gmail.com>"
+      "Motonori Iwata"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Install version 1.01, CPAN::Meta::Converter version 2.110930",
+   "generated_by" : "ExtUtils::MakeMaker version 6.58, CPAN::Meta::Converter version 2.110930",
    "license" : [
-      "perl_5"
+      "unknown"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -15,9 +15,8 @@
    "name" : "TwitStreamer",
    "no_index" : {
       "directory" : [
-         "inc",
          "t",
-         "xt"
+         "inc"
       ]
    },
    "prereqs" : {
@@ -29,7 +28,7 @@
       },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.42"
+            "ExtUtils::MakeMaker" : 0
          }
       },
       "runtime" : {
@@ -48,14 +47,5 @@
       }
    },
    "release_status" : "stable",
-   "resources" : {
-      "homepage" : "https://github.com/iwata/p5-TwitStreamer/tree",
-      "license" : [
-         "http://dev.perl.org/licenses/"
-      ],
-      "repository" : {
-         "url" : "git://github.com/iwata/p5-TwitStreamer.git"
-      }
-   },
    "version" : "0.01"
 }
