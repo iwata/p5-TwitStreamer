@@ -1,25 +1,37 @@
 =head1 NAME
 
-TwitStreamer -
+B<streamer.pl> - start stream
 
-=head1 SYNOPSIS
+=head1 VERSION
 
-  use TwitStreamer;
+0.01
 
 =head1 DESCRIPTION
 
-TwitStreamer is
+start twitter stream
+
+=head1 SYNOPSIS
+
+  Options:
+    --pit          pit key for twitter(default twitter.com)
+    --view|-v      view class(default growl)
+    --filter|-f    filter class(default none)
+
+    example)
+    $ streamer.pl
+    $ streamer.pl -f instagram
+
+=head1 OPTIONS
+
+=item B<--help|-h>
+
+Print brief help message and exit
 
 =head1 AUTHOR
 
-Motonori Iwata E<lt>gootonori@gmail.comE<gt>
+Motonori Iwata
 
 =head1 SEE ALSO
-
-=head1 LICENSE
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
 
 
 =cut

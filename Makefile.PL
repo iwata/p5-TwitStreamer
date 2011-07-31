@@ -1,9 +1,13 @@
 use inc::Module::Install;
 name 'TwitStreamer';
-all_from 'lib/TwitStreamer.pm';
-readme_from 'lib/TwitStreamer.pm';
-readme_markdown_from 'lib/TwitStreamer.pm';
-readme_pod_from 'lib/TwitStreamer.pm';
+#all_from 'lib/TwitStreamer.pm';
+#readme_from 'lib/TwitStreamer.pm';
+#readme_markdown_from 'lib/TwitStreamer.pm';
+#readme_pod_from 'lib/TwitStreamer.pm';
+all_from 'script/streamer.pl';
+readme_from 'script/streamer.pl';
+readme_markdown_from 'script/streamer.pl';
+readme_pod_from 'script/streamer.pl';
 githubmeta;
 
 requires 'String::CamelCase';

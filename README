@@ -1,17 +1,37 @@
 NAME
-    TwitStreamer -
+    streamer.pl - start stream
 
-SYNOPSIS
-      use TwitStreamer;
+VERSION
+    0.01
 
 DESCRIPTION
-    TwitStreamer is
+    start twitter stream
+
+SYNOPSIS
+      Options:
+        --pit          pit key for twitter(default twitter.com)
+        --view|-v      view class(default growl)
+        --filter|-f    filter class(default none)
+
+        example)
+        $ streamer.pl
+        $ streamer.pl -f instagram
+
+OPTIONS
+    --help|-h
+        Print brief help message and exit
 
 AUTHOR
-    Motonori Iwata <gootonori@gmail.com>
+    Motonori Iwata
 
 SEE ALSO
-LICENSE
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+POD ERRORS
+    Hey! The above document had some coding errors, which are explained
+    below:
+
+    Around line 53:
+        '=item' outside of any '=over'
+
+    Around line 57:
+        You forgot a '=back' before '=head1'
 
