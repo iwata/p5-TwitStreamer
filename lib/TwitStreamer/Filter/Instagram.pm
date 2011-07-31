@@ -8,7 +8,7 @@ use Carp;
 use Web::Scraper;
 use URI;
 
-use base 'TwitStreamer::Filter';
+use base 'TwitStreamer::Filter::Base';
 
 my $scraper = scraper {
     process 'img.photo', image => '@src';

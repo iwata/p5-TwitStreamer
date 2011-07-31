@@ -16,7 +16,6 @@ requires 'AnyEvent::Twitter';
 requires 'AnyEvent::Twitter::Stream';
 requires 'Cocoa::Growl';
 requires 'Growl::Any';
-requires 'Plack::Middleware::Log::Minimal';
 
 tests 't/*.t';
 author_tests 'xt';

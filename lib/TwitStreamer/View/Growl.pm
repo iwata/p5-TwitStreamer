@@ -5,7 +5,7 @@ use warnings;
 use utf8;
 use Growl::Any;
 
-use base 'TwitStreamer::View';
+use base 'TwitStreamer::View::Base';
 
 sub tweet {
     my ($class, $tweet) = @_;

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use utf8;
 
-use base 'TwitStreamer::Filter';
+use base 'TwitStreamer::Filter::Base';
 
 sub before {
     my ($class, $tweet) = @_;

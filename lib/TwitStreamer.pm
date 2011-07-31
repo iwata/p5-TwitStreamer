@@ -2,13 +2,14 @@ package TwitStreamer;
 use strict;
 use warnings;
 
-use Class::Load;
 use base qw/Class::Accessor::Fast/;
 use Object::Container qw/container/;
 use Config::Pit;
 use AnyEvent::Twitter::Stream;
-use String::CamelCase qw/camelize/;
 use Data::Dumper;
+
+use TwitStreamer::Filter;
+use TwitStreamer::View;
 
 our $VERSION = '0.01';
 
@@ -18,11 +19,13 @@ sub new {
     my $class = shift;
 
     my $args = ref $_[0] eq 'HASH' ? $_[0] : {@_};
-    map {
-        my $class = 'TwitStreamer::'.ucfirst($_).'::'.camelize(delete $args->{$_});
-        Class::Load::load_class $class;
-        container->register($_ => sub { $class->new });
-    } qw/view filter/;
+
+    container->register(filter => sub {
+        TwitStreamer::Filter::factory($args->{filter})
+    });
+    container->register(view => sub {
+        TwitStreamer::View::factory($args->{view})
+    });
 
     return $class->SUPER::new({
         %$args,
@@ -59,7 +62,7 @@ sub run {
         },
     );
 
-    return $cv->recv;
+    $cv->recv;
 }
 
 1;

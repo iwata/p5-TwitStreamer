@@ -2,22 +2,18 @@ package TwitStreamer::Filter;
 
 use strict;
 use warnings;
-use utf8;
-use base qw/Class::Accessor::Fast/;
 
-sub new {
-    my $class = shift;
+use Class::Load;
+use String::CamelCase qw/camelize/;
 
-    my $args = ref $_[0] eq 'HASH' ? $_[0] : {@_};
-    return $class->SUPER::new({
-        %$args,
-    });
+sub factory {
+    my $class = 'TwitStreamer::Filter::'.camelize( shift );
+    Class::Load::load_class $class;
+    $class->new;
 }
 
-sub before { }
-sub after { }
-
 1;
+
 __END__
 
 =head1 NAME

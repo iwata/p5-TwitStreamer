@@ -1,24 +1,28 @@
-package TwitStreamer::View;
+package TwitStreamer::Filter::Base;
 
 use strict;
 use warnings;
+use utf8;
+use base qw/Class::Accessor::Fast/;
 
-use Class::Load;
-use String::CamelCase qw/camelize/;
+sub new {
+    my $class = shift;
 
-sub factory {
-    my $class = 'TwitStreamer::View::'.camelize( shift );
-    Class::Load::load_class $class;
-    $class->new;
+    my $args = ref $_[0] eq 'HASH' ? $_[0] : {@_};
+    return $class->SUPER::new({
+        %$args,
+    });
 }
 
-1;
+sub before { }
+sub after { }
 
+1;
 __END__
 
 =head1 NAME
 
-TwitStreamer::View
+TwitStreamer::Filter::Base
 
 =head1 SYNOPSIS
 
