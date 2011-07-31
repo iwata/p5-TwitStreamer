@@ -3,6 +3,8 @@ use strict;
 use warnings;
 
 use Class::Load;
+use base qw/Class::Accessor::Fast/;
+use Object::Container qw/container/;
 use Config::Pit;
 use AnyEvent::Twitter::Stream;
 use String::CamelCase qw/camelize/;
@@ -10,15 +12,29 @@ use Data::Dumper;
 
 our $VERSION = '0.01';
 
+__PACKAGE__->mk_accessors( qw/pit viewer filter/ );
+
+sub new {
+    my $class = shift;
+
+    my $args = ref $_[0] eq 'HASH' ? $_[0] : {@_};
+    map {
+        my $class = 'TwitStreamer::'.ucfirst($_).'::'.camelize(delete $args->{$_});
+        Class::Load::load_class $class;
+        container->register($_ => sub {
+            $class->new
+        });
+    } qw/view filter/;
+
+    return $class->SUPER::new({
+        %$args,
+    });
+}
+
 sub run {
-    my ($pit, $view) = @_;
+    my $class = shift;
 
-    my $viewer = 'TwitStreamer::View::'.camelize($view);
-
-    Class::Load::load_class( $viewer );
-    $viewer = $viewer->new;
-
-    my $auth     = Config::Pit::get($pit, require => {
+    my $auth     = Config::Pit::get($class->pit, require => {
         consumer_key    => 'consumer key',
         consumer_secret => 'consumer secret',
         token           => 'access token',
@@ -29,7 +45,12 @@ sub run {
     my $streamer = AnyEvent::Twitter::Stream->new(
         %$auth,
         method   => 'userstream',
-        on_tweet => sub { $viewer->tweet(shift) },
+        on_tweet => sub {
+            my $tweet = shift;
+            container('filter')->before($tweet);
+            container('view')->tweet($tweet);
+            container('filter')->after($tweet);
+        },
         on_error => sub {
             warn shift;
             $cv->send;

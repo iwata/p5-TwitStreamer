@@ -9,6 +9,7 @@ githubmeta;
 requires 'String::CamelCase';
 requires 'Class::Load';
 requires 'Config::Pit';
+requires 'Object::Container';
 requires 'AnyEvent';
 requires 'AnyEvent::Twitter';
 requires 'AnyEvent::Twitter::Stream';

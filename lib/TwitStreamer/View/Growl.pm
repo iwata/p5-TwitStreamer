@@ -22,7 +22,7 @@ sub tweet {
         $event,
         $tweet->{user}{screen_name},
         $tweet->{text},
-        $tweet->{user}{profile_image_url},
+        $tweet->{image},
     );
 }
 
