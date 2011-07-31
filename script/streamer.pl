@@ -13,13 +13,10 @@ use feature qw/say/;
 
 use TwitStreamer;
 
-my %opt = (pit => 'twitter', out => 'growl');
-GetOptions( \%opt, qw/pit=s out|o=s/) or exit 1;
+my %opt = (pit => 'twitter.com', viewer => 'growl');
+GetOptions( \%opt, qw/pit=s viewer|v=s/) or exit 1;
 
-my $track = $ARGV[0];
-pod2usage(1) unless $track;
-
-if ( TwitStreamer::run($opt{pit}, $opt{out}, $track ) {
+if ( TwitStreamer::run($opt{pit}, $opt{viewer}) ) {
     say 'end';
 }
 

@@ -12,6 +12,7 @@ requires 'Config::Pit';
 requires 'AnyEvent';
 requires 'AnyEvent::Twitter';
 requires 'AnyEvent::Twitter::Stream';
+requires 'Cocoa::Growl';
 requires 'Growl::Any';
 requires 'Plack::Middleware::Log::Minimal';
 
@@ -19,6 +20,7 @@ tests 't/*.t';
 author_tests 'xt';
 
 build_requires 'Test::More';
+test_requires 'Test::Exception';
 auto_set_repository;
 auto_include;
 WriteAll;
