@@ -4,7 +4,7 @@
       "Motonori Iwata"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 6.58, CPAN::Meta::Converter version 2.110930",
+   "generated_by" : "Module::Install version 1.01, CPAN::Meta::Converter version 2.110930",
    "license" : [
       "unknown"
    ],
@@ -15,8 +15,9 @@
    "name" : "TwitStreamer",
    "no_index" : {
       "directory" : [
+         "inc",
          "t",
-         "inc"
+         "xt"
       ]
    },
    "prereqs" : {
@@ -28,7 +29,7 @@
       },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : 0
+            "ExtUtils::MakeMaker" : "6.42"
          }
       },
       "runtime" : {
@@ -47,5 +48,11 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "homepage" : "https://github.com/iwata/p5-TwitStreamer/tree",
+      "repository" : {
+         "url" : "git://github.com/iwata/p5-TwitStreamer.git"
+      }
+   },
    "version" : "0.01"
 }

@@ -6,9 +6,9 @@ build_requires:
   ExtUtils::MakeMaker: 6.42
   Test::Exception: 0
 configure_requires:
-  ExtUtils::MakeMaker: 0
+  ExtUtils::MakeMaker: 6.42
 dynamic_config: 0
-generated_by: 'ExtUtils::MakeMaker version 6.58, CPAN::Meta::Converter version 2.110930'
+generated_by: 'Module::Install version 1.01, CPAN::Meta::Converter version 2.110930'
 license: unknown
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -16,8 +16,9 @@ meta-spec:
 name: TwitStreamer
 no_index:
   directory:
-    - t
     - inc
+    - t
+    - xt
 requires:
   AnyEvent: 0
   AnyEvent::Twitter: 0
@@ -29,4 +30,7 @@ requires:
   Object::Container: 0
   String::CamelCase: 0
   Web::Scraper: 0
+resources:
+  homepage: https://github.com/iwata/p5-TwitStreamer/tree
+  repository: git://github.com/iwata/p5-TwitStreamer.git
 version: 0.01
