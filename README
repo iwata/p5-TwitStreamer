@@ -13,7 +13,6 @@ SYNOPSIS
         --view|-v      view class(default growl)
         --filter|-f    filter class(default none)
 
-        example)
         $ streamer.pl
         $ streamer.pl -f instagram
 
@@ -35,9 +34,9 @@ POD ERRORS
     Hey! The above document had some coding errors, which are explained
     below:
 
-    Around line 55:
+    Around line 54:
         '=item' outside of any '=over'
 
-    Around line 67:
+    Around line 66:
         You forgot a '=back' before '=head1'
 

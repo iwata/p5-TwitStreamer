@@ -46,7 +46,6 @@ start twitter stream
     --view|-v      view class(default growl)
     --filter|-f    filter class(default none)
 
-    example)
     $ streamer.pl
     $ streamer.pl -f instagram
 
