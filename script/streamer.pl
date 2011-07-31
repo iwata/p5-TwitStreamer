@@ -1,5 +1,7 @@
 #!/usr/bin/env perl
 
+our $VERSION = '0.01';
+
 use strict;
 use warnings;
 use utf8;
@@ -52,7 +54,15 @@ start twitter stream
 
 =item B<--help|-h>
 
-Print brief help message and exit
+show help message
+
+=item B<--view|-v>
+
+view class(default growl)
+
+=item B<--filter|-f>
+
+filter class(default none)
 
 =head1 AUTHOR
 

@@ -19,7 +19,13 @@ SYNOPSIS
 
 OPTIONS
     --help|-h
-        Print brief help message and exit
+        show help message
+
+    --view|-v
+        view class(default growl)
+
+    --filter|-f
+        filter class(default none)
 
 AUTHOR
     Motonori Iwata
@@ -29,9 +35,9 @@ POD ERRORS
     Hey! The above document had some coding errors, which are explained
     below:
 
-    Around line 53:
+    Around line 55:
         '=item' outside of any '=over'
 
-    Around line 57:
+    Around line 67:
         You forgot a '=back' before '=head1'
 
