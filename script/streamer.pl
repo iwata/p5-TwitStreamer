@@ -40,8 +40,13 @@ start twitter stream
 =head1 SYNOPSIS
 
   Options:
-    --pit           pit key for twitter(default twitter)
-    --track|-t      tracking keyword for twitter stream(required)
+    --pit          pit key for twitter(default twitter.com)
+    --view|-v      view class(default growl)
+    --filter|-f    filter class(default none)
+
+    example)
+    $ streamer.pl
+    $ streamer.pl -f instagram
 
 =head1 OPTIONS
 
